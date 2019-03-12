@@ -1,0 +1,10 @@
+﻿modelo_064,Adam,0.9944,0.9969,modelo_073,Adamax,0.9926,0.9937,modelo_082,Nadam,0.5028,0.4834,modelo_091,RMSProp,0.4981,0.5168,modelo_100,SGD,0.9663,0.9763,modelo_109,Adadelta,0.4967,0.5165,modelo_118,Adagrad,0.5023,0.4833
+modelo_065,Adam,0.9953,0.9895,modelo_074,Adamax,0.9944,0.991,modelo_083,Nadam,0.497,0.5164,modelo_092,RMSProp,0.981,0.98,modelo_101,SGD,0.9649,0.9731,modelo_110,Adadelta,0.9938,0.9942,modelo_119,Adagrad,0.5037,0.4835
+modelo_066,Adam,0.9948,0.9937,modelo_075,Adamax,0.9126,0.9278,modelo_084,Nadam,0.4983,0.5163,modelo_093,RMSProp,0.4972,0.5167,modelo_102,SGD,0.9619,0.9652,modelo_111,Adadelta,0.9947,0.9958,modelo_120,Adagrad,0.4965,0.5165
+modelo_067,Adam,0.9933,0.9921,modelo_076,Adamax,0.498,0.5166,modelo_085,Nadam,0.4972,0.5168,modelo_094,RMSProp,0.9856,0.99,modelo_103,SGD,0.9735,0.9627,modelo_112,Adadelta,0.9962,0.9932,modelo_121,Adagrad,0.4977,0.5167
+modelo_068,Adam,0.9926,1,modelo_077,Adamax,0.9964,0.9958,modelo_086,Nadam,0.5025,0.4834,modelo_095,RMSProp,0.9832,0.9704,modelo_104,SGD,0.963,0.9499,modelo_113,Adadelta,0.996,0.9963,modelo_122,Adagrad,0.5036,0.4835
+modelo_069,Adam,0.4973,0.5166,modelo_078,Adamax,0.5025,0.4835,modelo_087,Nadam,0.5016,0.4832,modelo_096,RMSProp,0.5036,0.4835,modelo_105,SGD,0.9631,0.9705,modelo_114,Adadelta,0.9952,0.9958,modelo_123,Adagrad,0.5031,0.4834
+modelo_070,Adam,0.9941,0.9979,modelo_079,Adamax,0.5041,0.4832,modelo_088,Nadam,0.4981,0.5167,modelo_097,RMSProp,0.9852,0.9937,modelo_106,SGD,0.9685,0.9783,modelo_115,Adadelta,0.4981,0.5164,modelo_124,Adagrad,0.4975,0.5167
+modelo_071,Adam,0.4964,0.5168,modelo_080,Adamax,0.4989,0.5166,modelo_089,Nadam,0.4964,0.5166,modelo_098,RMSProp,0.4977,0.5165,modelo_107,SGD,0.9765,0.9541,modelo_116,Adadelta,0.9956,0.9984,modelo_125,Adagrad,0.5022,0.4833
+modelo_072,Adam,0.4982,0.5168,modelo_081,Adamax,0.501,0.4835,modelo_090,Nadam,0.497,0.5167,modelo_099,RMSProp,0.5041,0.4834,modelo_108,SGD,0.9698,0.9704,modelo_117,Adadelta,0.9955,0.9915,modelo_126,Adagrad,0.5022,0.4833
+,,0.828488889,0.835588889,,,0.711166667,0.710188889,,,0.498988889,0.5055,,,0.715077778,0.716777778,,,0.9675,0.966722222,,,0.884644444,0.888677778,,,0.500977778,0.494466667

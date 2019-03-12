@@ -1,0 +1,75 @@
+	f1			f2			f3		
+optimizador	o1	o2	o3	o1	o2	o3	o1	o2	o3
+Adam	0.9915	0.9932	0.9863	0.9885	0.9911	0.9902	0.9868	0.9941	0.9928
+Adamax	0.9799	0.558	0.9856	0.994	0.9915	0.5581	0.989	0.9957	0.5583
+Nadam	0.9898	0.986	0.9877	0.9885	0.9971	0.9885	0.991	0.985	0.4418
+Rmsprop	0.9864	0.969	0.9698	0.9648	0.9937	0.4422	0.9928	0.5581	0.9765
+SGD	0.9608	0.9761	0.9766	0.8945	0.9711	0.9628	0.9685	0.9659	0.9757
+Adadelta	0.9945	0.9936	0.9911	0.9881	0.9957	0.9911	0.9975	0.994	0.9944
+Adagrad	0.5582	0.4416	0.558	0.9825	0.5578	0.4419	0.442	0.5581	0.5581
+									
+									
+	optimizador	final	oculta	acc					
+	adam	a	1	0.9915					
+	adam	a	2	0.9932					
+	adam	a	3	0.9863					
+	adam	b	1	0.9885					
+	adam	b	2	0.9911					
+	adam	b	3	0.9902					
+	adam	c	1	0.9868					
+	adam	c	2	0.9941					
+	adam	c	3	0.9928					
+	adamax	a	1	0.9799					
+	adamax	a	2	0.558					
+	adamax	a	3	0.9856					
+	adamax	b	1	0.994					
+	adamax	b	2	0.9915					
+	adamax	b	3	0.5581					
+	adamax	c	1	0.989					
+	adamax	c	2	0.9957					
+	adamax	c	3	0.5583					
+	nadam	a	1	0.9898					
+	nadam	a	2	0.986					
+	nadam	a	3	0.9877					
+	nadam	b	1	0.9885					
+	nadam	b	2	0.9971					
+	nadam	b	3	0.9885					
+	nadam	c	1	0.991					
+	nadam	c	2	0.985					
+	nadam	c	3	0.4418					
+	rmsprop	a	1	0.9864					
+	rmsprop	a	2	0.969					
+	rmsprop	a	3	0.9698					
+	rmsprop	b	1	0.9648					
+	rmsprop	b	2	0.9937					
+	rmsprop	b	3	0.4422					
+	rmsprop	c	1	0.9928					
+	rmsprop	c	2	0.5581					
+	rmsprop	c	3	0.9765					
+	sgd	a	1	0.9608					
+	sgd	a	2	0.9761					
+	sgd	a	3	0.9766					
+	sgd	b	1	0.8945					
+	sgd	b	2	0.9711					
+	sgd	b	3	0.9628					
+	sgd	c	1	0.9685					
+	sgd	c	2	0.9659					
+	sgd	c	3	0.9757					
+	adadelta	a	1	0.9945					
+	adadelta	a	2	0.9936					
+	adadelta	a	3	0.9911					
+	adadelta	b	1	0.9881					
+	adadelta	b	2	0.9957					
+	adadelta	b	3	0.9911					
+	adadelta	c	1	0.9975					
+	adadelta	c	2	0.994					
+	adadelta	c	3	0.9944					
+	adagrad	a	1	0.5582					
+	adagrad	a	2	0.9825					
+	adagrad	a	3	0.442					
+	adagrad	b	1	0.4416					
+	adagrad	b	2	0.5578					
+	adagrad	b	3	0.5581					
+	adagrad	c	1	0.558					
+	adagrad	c	2	0.4419					
+	adagrad	c	3	0.5581					
