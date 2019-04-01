@@ -1,4 +1,4 @@
-datos <- read.table("todos.txt", header = TRUE)
+datos <- read.table("ultimo.txt", header = TRUE)
 
 opt<- as.factor(datos[,1])
 fin <- as.factor(datos[,2])
@@ -20,12 +20,12 @@ with(datos, {
 par(op)
 fm <- aov(acc ~ opt + fin + ocu + opt*fin + opt*ocu +
           fin*ocu + opt*fin*ocu, data = datos)
-summary(g)
-fm <- update(g, . ~ . - opt:fin:ocu )
-summary(fml)
+summary(fm)
+fm <- update(fm, . ~ . - opt:fin:ocu )
+summary(fm)
 
-fml <- update(fml, .~opt+fin+ocu)
-summary(fm2)
+fml <- update(fm, .~opt+fin+ocu)
+summary(fml)
 
 anova(fm, fml)
 
@@ -33,7 +33,7 @@ model.tables(fml, type = "effects")
 
 model.tables(fml, type = "means")
 
-fm <- aov(acc ~ opt+fin+ocu, data = datos)
+fm <- aov(acc ~ opt+fin, data = datos)
 #fm <- aov(acc~ opt, data = datos)
 summary(fm)
 

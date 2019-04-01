@@ -1,0 +1,123 @@
+> datos <- read.table("tam2-1.txt", header = TRUE)
+> 
+> opt<- as.factor(datos[,1])
+> fin <- as.factor(datos[,2])
+> ocu <- as.factor(datos[,3])
+> acc <- datos[,4]
+> datos$ocu = factor(datos$ocu)
+> datos$fin = factor(datos$fin)
+> head(datos)
+   opt fin ocu    acc
+1 adam 128  32 0.9969
+2 adam 128  64 0.9895
+3 adam 128 128 0.9937
+4 adam 240  32 0.9921
+5 adam 240  64 1.0000
+6 adam 240 128 0.5166
+> str(datos)
+'data.frame':	27 obs. of  4 variables:
+ $ opt: Factor w/ 3 levels "adadelta","adam",..: 2 2 2 2 2 2 2 2 2 3 ...
+ $ fin: Factor w/ 3 levels "128","240","380": 1 1 1 2 2 2 3 3 3 1 ...
+ $ ocu: Factor w/ 3 levels "32","64","128": 1 2 3 1 2 3 1 2 3 1 ...
+ $ acc: num  0.997 0.99 0.994 0.992 1 ...
+> plot.design(acc ~ ., data = datos)
+> 
+> op <- par(mfrow = c(3, 1))
+> with(datos, {
++   interaction.plot(opt, fin, acc)
++   interaction.plot(opt, ocu, acc)
++   interaction.plot(fin, ocu, acc)
++   }
++ )
+> par(op)
+> fm <- aov(acc ~ opt + fin + ocu + opt*fin + opt*ocu +
++           fin*ocu + opt*fin*ocu, data = datos)
+> summary(fm)
+            Df Sum Sq Mean Sq
+opt          2 0.0783 0.03916
+fin          2 0.0667 0.03334
+ocu          2 0.0149 0.00747
+opt:fin      4 0.1344 0.03361
+opt:ocu      4 0.3436 0.08591
+fin:ocu      4 0.0813 0.02033
+opt:fin:ocu  8 0.1737 0.02171
+> fm <- update(fm, . ~ . - opt:fin:ocu )
+> summary(fm)
+            Df Sum Sq Mean Sq F value Pr(>F)  
+opt          2 0.0783 0.03916   1.804 0.2256  
+fin          2 0.0667 0.03334   1.536 0.2726  
+ocu          2 0.0149 0.00747   0.344 0.7188  
+opt:fin      4 0.1344 0.03361   1.548 0.2771  
+opt:ocu      4 0.3436 0.08591   3.958 0.0464 *
+fin:ocu      4 0.0813 0.02033   0.936 0.4898  
+Residuals    8 0.1737 0.02171                 
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+> 
+> fml <- update(fm, .~opt+fin+ocu)
+> summary(fml)
+            Df Sum Sq Mean Sq F value Pr(>F)
+opt          2 0.0783 0.03916   1.068  0.362
+fin          2 0.0667 0.03334   0.910  0.419
+ocu          2 0.0149 0.00747   0.204  0.817
+Residuals   20 0.7330 0.03665               
+> 
+> anova(fm, fml)
+Analysis of Variance Table
+
+Model 1: acc ~ opt + fin + ocu + opt:fin + opt:ocu + fin:ocu
+Model 2: acc ~ opt + fin + ocu
+  Res.Df     RSS  Df Sum of Sq      F Pr(>F)
+1      8 0.17366                            
+2     20 0.73303 -12  -0.55937 2.1474 0.1421
+> 
+> model.tables(fml, type = "effects")
+Tables of effects
+
+ opt 
+opt
+adadelta     adam      sgd 
+-0.00832 -0.06141  0.06973 
+
+ fin 
+fin
+     128      240      380 
+ 0.03647  0.03379 -0.07026 
+
+ ocu 
+ocu
+      32       64      128 
+-0.01585  0.03326 -0.01741 
+> 
+> model.tables(fml, type = "means")
+Tables of means
+Grand mean
+          
+0.8969963 
+
+ opt 
+opt
+adadelta     adam      sgd 
+  0.8887   0.8356   0.9667 
+
+ fin 
+fin
+   128    240    380 
+0.9335 0.9308 0.8267 
+
+ ocu 
+ocu
+    32     64    128 
+0.8811 0.9303 0.8796 
+> 
+> fm <- aov(acc ~ opt+fin, data = datos)
+> #fm <- aov(acc~ opt, data = datos)
+> summary(fm)
+            Df Sum Sq Mean Sq F value Pr(>F)
+opt          2 0.0783 0.03916   1.152  0.334
+fin          2 0.0667 0.03334   0.981  0.391
+Residuals   22 0.7480 0.03400               
+> 
+> op <- par(mfrow = c(2, 2))
+> plot(fm)
+> par(op)
